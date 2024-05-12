@@ -8,7 +8,7 @@ resource "aws_security_group" "alb" {
     to_port          = 0
     protocol         = "-1"
     cidr_blocks = ["192.168.100.0/24"]  // Example of a more restrictive range
-    ipv6_cidr_blocks = ["2600:1f18:1234::/56"]  // Example of a more restrictive IPv6 range
+    //ipv6_cidr_blocks = ["2600:1f18:1234::/56"]  // Example of a more restrictive IPv6 range
   }
 
   tags = {
