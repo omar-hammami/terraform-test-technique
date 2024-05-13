@@ -1,20 +1,20 @@
 variable "vpc_cidr" {
-  description = "CIDR for VPC"
-  default     = "10.0.0.0/16"
+  description = "The CIDR block for the VPC."
+  type        = string
 }
 
-variable "subnets_cidr" {
-  description = "List of subnet CIDRs"
+variable "subnet_cidrs" {
+  description = "List of CIDR blocks for each subnet."
+  type        = list(string)
+}
+
+variable "availability_zones" {
+  description = "List of availability zones in which to create subnets."
   type        = list(string)
 }
 
 variable "map_public_ip_on_launch" {
-  description = "Boolean to enable/disable public IP on launch"
+  description = "Whether resources in these subnets can have public IP addresses."
   type        = bool
   default     = false
-}
-
-variable "availability_zones" {
-  description = "List of availability zones"
-  type        = list(string)
 }
